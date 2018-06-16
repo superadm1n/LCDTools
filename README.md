@@ -20,7 +20,9 @@ RPLCD==1.1.0
 Issue the following commands to install this driver into your project
 
 ```
-pip install git+https://github.com/superadm1n/LCDTools
+git clone https://github.com/superadm1n/LCDTools
+cd LCDTools
+python setup.py install
 ```
 
 ### Using Library

@@ -6,7 +6,6 @@ while using the minimal amount of pins and maintaining the maximum functionality
 setup(
     name='LCDTools',
     version='1.0.0',
-    packages=['LCDTools'],
     keywords='LCD Liquid Crystal Display Library Driver Tools',
     url='https://github.com/superadm1n/LCDTools',
     license='MIT',

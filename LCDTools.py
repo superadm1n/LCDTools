@@ -31,7 +31,7 @@ import RPi.GPIO as GPIO
 from time import sleep
 
 
-class LCDTools:
+class Driver:
 
     Newline = '\r\n'
 

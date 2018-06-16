@@ -31,7 +31,7 @@ off after 5 seconds.
 ```
 import LCDTools
 
-with LCDTools(rsPin, enPin, d4Pin, d5Pin, d6Pin, d7Pin) as lcd:
+with LCDTools.Driver(rsPin, enPin, d4Pin, d5Pin, d6Pin, d7Pin) as lcd:
     lcd.clear_screen()
     lcd.append_to_screen(lcd.center_text('Hello!'))  # prints centered
     lcd.append_to_screen('Have Fun!')

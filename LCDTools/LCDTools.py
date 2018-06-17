@@ -49,10 +49,10 @@ class Driver:
         self.lcd = CharLCD(cols=cols, rows=rows, pin_rw=rwPin, pin_rs=rsPin, pin_e=enPin,
                            pins_data=[d4Pin,d5Pin,d6Pin,d7Pin], numbering_mode=boardNum)
 
-        self._warm_up_display()
-
         self.lcdmem = self._generate_lcd_memory()
         self.curpos = [0, 0]  # [row, column]
+
+        self._warm_up_display()
 
         sleep(1)
         self.lcd.clear()

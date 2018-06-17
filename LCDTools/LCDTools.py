@@ -49,6 +49,8 @@ class Driver:
         self.lcd = CharLCD(cols=cols, rows=rows, pin_rw=rwPin, pin_rs=rsPin, pin_e=enPin,
                            pins_data=[d4Pin,d5Pin,d6Pin,d7Pin], numbering_mode=boardNum)
 
+        self._warm_up_display()
+
         self.lcdmem = self._generate_lcd_memory()
         self.curpos = [0, 0]  # [row, column]
 
@@ -63,6 +65,18 @@ class Driver:
     def __exit__(self, exc_type, exc_val, exc_tb):
 
         GPIO.cleanup()
+
+    def _warm_up_display(self):
+        '''
+        Fills every section of the display with spaces so the display gets "warmed up"
+        and doesnt output junk when we start sending real data to it.
+        :return:
+        '''
+
+        characters = self.cols * self.rows
+
+        for x in range(characters):
+            self.append_to_screen(' ')
 
     def _generate_lcd_memory(self):
 
